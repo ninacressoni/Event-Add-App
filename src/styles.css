@@ -1,1 +1,44 @@
 /* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+.hoverwell:hover {
+    background-color: #6C757D;
+    color: #023047;
+    cursor: pointer;
+  }
+
+  body {
+      color: #fff;
+      background-color: #023047;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  .container {
+      padding: 10px 30px 10px 30px;
+      float: left;
+      width: 100vw;
+  }
+  
+  .pointable {
+    cursor: pointer;
+  }
+  
+  button {
+    color: #555;
+  }
+  
+  [hidden] {
+    display: none !important;
+  }
+  
+  .toast-success {
+    background-color: #51a351;
+  }
+  .toast-error {
+    background-color: #bd362f;
+  }
+  .toast-info {
+    background-color: #2f96b4;
+  }
+  .toast-warning {
+    background-color: #f89406;
+  }
