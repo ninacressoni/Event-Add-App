@@ -7,7 +7,8 @@ import { Component, Input } from "@angular/core";
     <div class="well hoverwell thumbnail">
         <h2> {{event?.name}} </h2>
         <div>Date: {{event?.date}} </div>
-        <div [ngSwitch]="event?.time">
+        <div [ngStyle]="getStartTimeStyle()"  
+        [ngSwitch]="event?.time">
             Time: {{event?.time}}
             <span *ngSwitchCase="'8:00 am'" >(Morning Time)</span>
             <span *ngSwitchCase="'10:00 pm'" >(Night Time)</span>
@@ -45,9 +46,9 @@ export class EventThumbnailComponent {
     //handleClickMe() {
         //this.eventClick.emit(this.event.name)
    // }
-   someProperty: any = "some value"
-
-   logFoo() {
-       console.log('foo')
+   getStartTimeStyle() : any {
+       if (this.event && this.event.time === '8:00 am')
+        return {color: '#003300', 'font-weight': 'bold'}
+       return {}
    }
 }
