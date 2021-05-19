@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from "@angular/core";
+import { Component, Input } from "@angular/core";
 
 
 @Component ({
@@ -11,15 +11,18 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
         <div>Price: {{event.price}}  </div>
         <div>
             <span>Location: {{event.location.address}} </span>
-            <span> &nbsp; </span>
-            <span> {{event.location.city}}, {{event.location.country}} </span>
+            <span class="pad-left"> {{event.location.city}}, {{event.location.country}} </span>
         </div>
-
-        
     </div>
-    `
-
+    `,
     //<button class="btn btn-primary" (click)="handleClickMe()" >Click Me!</button>
+
+    styles: [`
+        .pad-left { margin-left: 10px; }
+        .well div { color: #D90429; }
+    `]
+
+
 })
 
 export class EventThumbnailComponent {
