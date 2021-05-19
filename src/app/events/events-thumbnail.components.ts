@@ -18,8 +18,9 @@ import { Component, Input } from "@angular/core";
     //<button class="btn btn-primary" (click)="handleClickMe()" >Click Me!</button>
 
     styles: [`
+        .thumbnail { min-height: 210px; }
         .pad-left { margin-left: 10px; }
-        .well div { color: #D90429; }
+        .well div { color: #bbb; }
     `]
 
 
