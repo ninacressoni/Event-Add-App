@@ -9,17 +9,19 @@ import { Component, Input } from "@angular/core";
         <div>Date: {{event?.date}} </div>
         <div>Time: {{event?.time}} </div>
         <div>Price: {{event?.price}}  </div>
-        <div>
+        <div *ngIf="event?.location">
             <span>Location: {{event?.location?.address}} </span>
             <span class="pad-left"> {{event?.location?.city}}, {{event?.location?.country}} </span>
         </div>
 
-        <div>
+        <div *ngIf="event?.onlineUrl">
             Online URL: {{event?.onlineUrl}}
         </div>
     </div>
     `,
     //<button class="btn btn-primary" (click)="handleClickMe()" >Click Me!</button>
+
+    // *ngIf="event?.location" | Checking to see is location is truthy
 
     styles: [`
         .thumbnail { min-height: 210px; }
