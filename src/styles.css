@@ -1,15 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
 /* You can add global styles to this file, and also import other style files */
 .hoverwell:hover {
-    background-color: #6C757D;
-    color: #023047;
+    color: #660708;
     cursor: pointer;
   }
 
+.thumbnail {
+  color: #660708;
+  background-color: #fff;
+  opacity: .9;
+}
+
+.thumbnail:hover {
+  background-color: #333333;
+}
+
   body {
       color: #fff;
-      background-color: #023047;
+      background-color: #660708;
       font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  }
+
+  .navbar{
+    background-color: #fff;
+    color: #660708;
   }
   
   .container {

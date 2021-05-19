@@ -7,14 +7,19 @@ import { Component, Input } from "@angular/core";
     <div class="well hoverwell thumbnail">
         <h2> {{event?.name}} </h2>
         <div>Date: {{event?.date}} </div>
-        <div>Time: {{event?.time}} </div>
+        <div [ngSwitch]="event?.time">
+            Time: {{event?.time}}
+            <span *ngSwitchCase="'8:00 am'" >(Morning Time)</span>
+            <span *ngSwitchCase="'10:00 pm'" >(Night Time)</span>
+            <span *ngSwitchDefault >(Normal Time)</span> 
+        </div>
         <div>Price: {{event?.price}}  </div>
-        <div [hidden]="!event?.location" >
+        <div *ngIf="event?.location">
             <span>Location: {{event?.location?.address}} </span>
             <span class="pad-left"> {{event?.location?.city}}, {{event?.location?.country}} </span>
         </div>
 
-        <div [hidden]="!event.onlineUrl">
+        <div *ngIf="event?.onlineUrl">
             Online URL: {{event?.onlineUrl}}
         </div>
     </div>
@@ -27,6 +32,7 @@ import { Component, Input } from "@angular/core";
         .thumbnail { min-height: 210px; }
         .pad-left { margin-left: 10px; }
         .well div { color: #bbb; }
+    
     `]
 
 
