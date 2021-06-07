@@ -2,11 +2,15 @@
 // adding this injectable decorator is important for any service
 // that your're going to inject into your components or another service
 import { Injectable } from "@angular/core"
+import { Subject } from "rxjs"
 
 @Injectable()
 export class EventService {
     getEvents() {
-        return EVENTS
+        let subject = new Subject()
+        setTimeout( () => { subject.next(EVENTS); 
+            subject.complete(); }, 100 )
+        return subject
     }
 
     getEvent(id: number) {
